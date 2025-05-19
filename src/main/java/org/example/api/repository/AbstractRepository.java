@@ -8,11 +8,19 @@ public abstract class AbstractRepository <T> implements Repository<T> {
 
     protected final List<T> storage = new ArrayList<>();
 
+    /**
+     *
+     * @return storage as a List of entities
+     */
     @Override
     public List<T> findAll() {
         return storage;
     }
 
+    /**
+     *
+     * @param entity
+     */
     @Override
     public void save(T entity) {
         if (isValid(entity)) {
@@ -22,5 +30,10 @@ public abstract class AbstractRepository <T> implements Repository<T> {
         }
     }
 
+    /**
+     *
+     * @param item
+     * @return
+     */
     protected abstract boolean isValid(T item);
 }

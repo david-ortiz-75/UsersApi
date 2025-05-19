@@ -18,6 +18,11 @@ public class UserController {
         this.userRepo = userRepo;
     }
 
+    /**
+     *
+     * @param user
+     * @return
+     */
     @PostMapping
     public ResponseEntity<Void> addUser(@RequestBody User user){
         try {
@@ -28,6 +33,10 @@ public class UserController {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userRepo.findAll());
